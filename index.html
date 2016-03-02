@@ -1,0 +1,160 @@
+<!-- Arjun Devarajan -->
+<!-- Started: October 3, 2015 -->
+<!-- Last Updated: February 22, 2016 -->
+<!-- My first website! -->
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Arjun Devarajan</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
+		<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+		<!-- 2. Use an HTML Import to bring in some elements. -->
+		<link rel="import" href="bower_components/paper-button/paper-button.html">
+		<link rel="import" href="bower_components/paper-menu-button/paper-menu-button.html">
+		<link rel="import" href="bower_components/paper-menu-button/paper-menu-button-animations.html">
+		<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+		<link rel="import" href="bower_components/paper-menu/paper-menu.html">
+		<link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+		<link rel="import" href="bower_components/paper-item/paper-item.html">
+	</head>
+	<body>
+		<div class = "Header" id = "Header">
+			<h2>Arjun Devarajan</h2>
+			<img src="Me.jpg" height="250" width="250" alt="Picture of Me">
+			<p>Native of Cary, NC</p>
+		</div>
+
+		<div class = "Links">
+			<p>
+				More information can be found <a href="Arjun Devarajan Resume.pdf">here</a>. If you really find that interesting, I guess you could look <a href="https://www.linkedin.com/in/arjundevarajan">here</a>, <a href="https://twitter.com/ArjunDevarajan">here</a>, or even <a href="https://instagram.com/arjdevarj/">here</a> to find out more about me. 
+			</p>
+
+			<p>
+				I'm 19 years old and I still know pretty much nothing, but I'm doing everything I can to learn more and more. I'm a second-year physics and computer science student at the most hateable university in America (Coach K does a good job) and I'm trying to make life multiplanetary.
+			</p>
+
+			<p>
+				<a href="#Header">This</a> is a link to my name. <a href="Volyoome">This</a> is a link to a project I once worked on. This is a form entry box and submit button: <textarea rows="10" cols="30">Type something to submit it.</textarea> <input type="submit" value="Pls click"> This is a radio: <input type="radio"> and this is a checkbox: <input type="checkbox">. 
+			</p>
+
+			<p>
+				Pick your favorite pet animal
+				<select>
+					<option>Dog</option>
+					<option>Cat</option>
+					<option>Fish</option>
+					<option value="best animal">Octopus</option>
+				</select>
+			</p>
+
+			<p></p>
+
+			<table>
+				<tr>
+					<td>Category</td>
+					<td>Me</td>
+					<td>My friend</td>
+				</tr>
+				<tr>
+					<td>Favorite movie</td>
+					<td>Inception</td>
+					<td>Not Inception</td>
+				</tr>
+				<tr>
+					<td>Favorite meal</td>
+					<td>Paneer</td>
+					<td>Not paneer</td>
+				</tr>
+				<tr>
+					<td>Favorite text editor</td>
+					<td>Sublime</td>
+					<td>Not sublime</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="Interests">
+			<p>
+				Here are a few of the things I'm interested in learning about: 
+			</p>
+			<ul>
+				<li><a href="https://www.youtube.com/watch?v=IyuBylcPJi0">Artificial Intelligence</a></li>
+				<li><a href="https://www.youtube.com/watch?v=aThCr0PsyuA">Augmented Reality</a></li>
+				<li><a href="https://www.youtube.com/user/arjund98">Filmmaking</a></li>
+				<li><a href="Data+ Final Poster.pdf">Solar Energy</a></li>
+				<li><a href="https://www.youtube.com/watch?v=sNhhvQGsMEc">Space Exploration</a></li>
+				<li><a href="https://www.youtube.com/watch?v=s86-Z-CbaHA">Youtube Video Education</a></li>
+			</ul>
+		</div>
+
+		<div class = "Disclaimer">
+			<p>
+				DISCLAIMER: THIS WEBSITE IS CURRENTLY UNDER RECONSTRUCTION. 
+			</p>
+			<!-- <paper-button>Submit</paper-button> -->
+			<paper-menu selected = "0">
+				<paper-item>Item 1</paper-item>
+				<paper-item>Item 2</paper-item>
+			</paper-menu>
+			<paper-dropdown-menu label="Your favourite pastry">
+				<paper-menu class="dropdown-content">
+					<paper-item>Croissant</paper-item>
+					<paper-item>Donut</paper-item>
+					<paper-item>Financier</paper-item>
+					<paper-item>Madeleine</paper-item>
+				</paper-menu>
+			</paper-dropdown-menu>
+			<div>
+				<paper-button class="custom pink"><a href="https://www.youtube.com/watch?v=IyuBylcPJi0">Artificial Intelligence</a></paper-button>
+				<paper-button raised class="custom indigo">raised</paper-button>
+				<paper-button toggles raised class="custom green">toggles</paper-button>
+				<paper-button disabled class="custom disabled">disabled</paper-button>
+
+				<style is="custom-style">
+				paper-button.custom {
+					--paper-button-ink-color: var(--paper-pink-a200);
+				    /* These could also be individually defined for each of the
+				    specific css classes, but we'll just do it once as an example */
+				    --paper-button-flat-keyboard-focus: {
+				    	background-color: var(--paper-pink-a200);
+				    	color: white !important;
+				    };
+				    --paper-button-raised-keyboard-focus: {
+				    	background-color: var(--paper-pink-a200) !important;
+				    	color: white !important;
+				    };
+				}
+				paper-button.custom:hover {
+					background-color: var(--paper-indigo-100);
+				}
+				paper-button.pink {
+					color: var(--paper-pink-a200);
+
+				}
+				paper-button.indigo {
+					background-color: var(--paper-indigo-500);
+					color: white;
+					--paper-button-raised-keyboard-focus: {
+						background-color: var(--paper-pink-a200) !important;
+						color: white !important;
+					};
+				}
+				paper-button.green {
+					background-color: var(--paper-green-500);
+					color: white;
+				}
+				paper-button.green[active] {
+					background-color: var(--paper-blue-500);
+				}
+				paper-button.disabled {
+					color: white;
+				}
+				</style>
+			</div>
+		</div>
+	</body>
+</html>
