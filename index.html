@@ -1,6 +1,6 @@
 <!-- Arjun Devarajan -->
 <!-- Started: October 3, 2015 -->
-<!-- Last Updated: February 22, 2016 -->
+<!-- Last Updated: March 7, 2016 -->
 <!-- My first website! -->
 
 <!DOCTYPE html>
@@ -9,17 +9,6 @@
 	<head>
 		<title>Arjun Devarajan</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
-		<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-
-		<!-- 2. Use an HTML Import to bring in some elements. -->
-		<link rel="import" href="bower_components/paper-button/paper-button.html">
-		<link rel="import" href="bower_components/paper-menu-button/paper-menu-button.html">
-		<link rel="import" href="bower_components/paper-menu-button/paper-menu-button-animations.html">
-		<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
-		<link rel="import" href="bower_components/paper-menu/paper-menu.html">
-		<link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
-		<link rel="import" href="bower_components/paper-item/paper-item.html">
 	</head>
 	<body>
 		<div class = "Header" id = "Header">
@@ -95,66 +84,6 @@
 			<p>
 				DISCLAIMER: THIS WEBSITE IS CURRENTLY UNDER RECONSTRUCTION. 
 			</p>
-			<!-- <paper-button>Submit</paper-button> -->
-			<paper-menu selected = "0">
-				<paper-item>Item 1</paper-item>
-				<paper-item>Item 2</paper-item>
-			</paper-menu>
-			<paper-dropdown-menu label="Your favourite pastry">
-				<paper-menu class="dropdown-content">
-					<paper-item>Croissant</paper-item>
-					<paper-item>Donut</paper-item>
-					<paper-item>Financier</paper-item>
-					<paper-item>Madeleine</paper-item>
-				</paper-menu>
-			</paper-dropdown-menu>
-			<div>
-				<paper-button class="custom pink"><a href="https://www.youtube.com/watch?v=IyuBylcPJi0">Artificial Intelligence</a></paper-button>
-				<paper-button raised class="custom indigo">raised</paper-button>
-				<paper-button toggles raised class="custom green">toggles</paper-button>
-				<paper-button disabled class="custom disabled">disabled</paper-button>
-
-				<style is="custom-style">
-				paper-button.custom {
-					--paper-button-ink-color: var(--paper-pink-a200);
-				    /* These could also be individually defined for each of the
-				    specific css classes, but we'll just do it once as an example */
-				    --paper-button-flat-keyboard-focus: {
-				    	background-color: var(--paper-pink-a200);
-				    	color: white !important;
-				    };
-				    --paper-button-raised-keyboard-focus: {
-				    	background-color: var(--paper-pink-a200) !important;
-				    	color: white !important;
-				    };
-				}
-				paper-button.custom:hover {
-					background-color: var(--paper-indigo-100);
-				}
-				paper-button.pink {
-					color: var(--paper-pink-a200);
-
-				}
-				paper-button.indigo {
-					background-color: var(--paper-indigo-500);
-					color: white;
-					--paper-button-raised-keyboard-focus: {
-						background-color: var(--paper-pink-a200) !important;
-						color: white !important;
-					};
-				}
-				paper-button.green {
-					background-color: var(--paper-green-500);
-					color: white;
-				}
-				paper-button.green[active] {
-					background-color: var(--paper-blue-500);
-				}
-				paper-button.disabled {
-					color: white;
-				}
-				</style>
-			</div>
 		</div>
 	</body>
 </html>
