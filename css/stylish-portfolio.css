@@ -44,6 +44,10 @@ body {
     background-color: rgba(0,0,0,0.7);
 }
 
+h1 {
+    color:white;
+}
+
 .btn-light {
     border-radius: 0;
     color: #333;
