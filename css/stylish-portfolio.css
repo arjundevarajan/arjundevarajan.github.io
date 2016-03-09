@@ -182,20 +182,6 @@ hr.small {
     margin-bottom: 30px;
 }
 
-/* Callout */
-
-.callout {
-    display: table;
-    width: 100%;
-    height: 400px;
-    color: #fff;
-    background: url(../img/callout.jpg) no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
 /* Portfolio */
 
 .portfolio {
@@ -214,28 +200,6 @@ hr.small {
     opacity: 0.8;
 }
 
-/* Call to Action */
-
-.call-to-action {
-    padding: 50px 0;
-}
-
-.call-to-action .btn {
-    margin: 10px;
-}
-
-/* Map */
-
-.map {
-    height: 500px;
-}
-
-@media(max-width:768px) {
-    .map {
-        height: 75%;
-    }
-}
-
 /* Footer */
 
 footer {
@@ -251,11 +215,11 @@ footer {
 }
 
 #portfolio-1 {background:url(../img/portfolio-1.jpg);}
-#portfolio-2 {background:url(../img/portfolio-2.jpg);}
+#portfolio-2 {background:url(../img/portfolio-2.png);}
 #portfolio-3 {background:url(../img/portfolio-3.jpg);}
-#portfolio-4 {background:url(../img/portfolio-4.jpg);}
+#portfolio-4 {background:url(../img/portfolio-4.png);}
 #portfolio-5 {background:url(../img/portfolio-5.jpg);}
-#portfolio-6 {background:url(../img/portfolio-6.jpg);}
+#portfolio-6 {background:url(../img/portfolio-6.png);}
 
 .box {
     width:300px;
@@ -272,7 +236,7 @@ footer {
 .overlay {
     background:rgba(0,0,0,.75);
     text-align:center;
-    padding:45px 0 66px 0;
+    padding:75px 0 66px 0;
     opacity:0;
     -webkit-transition: opacity .25s ease;
     -moz-transition: opacity .25s ease;
@@ -286,5 +250,9 @@ footer {
     font-family:Helvetica;
     font-weight:500;
     color:rgba(255,255,255,.85);
-    font-size:25px;
+    font-size:20px;
+}
+
+.no-underline {
+    text-decoration: none;
 }
