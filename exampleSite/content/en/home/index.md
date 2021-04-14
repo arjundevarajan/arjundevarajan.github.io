@@ -1,6 +1,6 @@
 ---
-title: "Hi, I'm Introduction"
+title: "Hi, I'm Arjun Devarajan"
 headless: true
 ---
 
-I'm a theme for Hugo
+I'm someone trying to build things that help people without being exploitative
