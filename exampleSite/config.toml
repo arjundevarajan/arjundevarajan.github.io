@@ -1,5 +1,5 @@
-baseURL                          = "http://example.com/"   # Your domain name. Must end with "/"
-theme                            = "introduction"
+baseURL                          = "http://arjundevarajan.github.io/"   # Your domain name. Must end with "/"
+theme                            = "arjundevarajan.github.io"
 DefaultContentLanguage           = "en"                    # Default language for multilingual sites
 # disqusshortname                 = ""                     # https://gohugo.io/content-management/comments
 # googleAnalytics                 = ""                     # https://gohugo.io/templates/internal/#google-analytics
