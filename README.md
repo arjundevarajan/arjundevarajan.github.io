@@ -1,109 +1,220 @@
-# The Cayman theme
+# Introduction theme for Hugo
 
-[![Build Status](https://travis-ci.org/pages-themes/cayman.svg?branch=master)](https://travis-ci.org/pages-themes/cayman) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-cayman.svg)](https://badge.fury.io/rb/jekyll-theme-cayman)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/51d09485-c9d1-4a88-90ba-894f09e5a29d/deploy-status)](https://app.netlify.com/sites/hugo-introduction/deploys)
+![Test Hugo versions](https://github.com/victoriadrake/hugo-theme-introduction/workflows/test-versions/badge.svg)
+![Latest Release](https://img.shields.io/github/tag/victoriadrake/hugo-theme-introduction.svg)
 
-*Cayman is a Jekyll theme for GitHub Pages. You can [preview the theme to see what it looks like](http://pages-themes.github.io/cayman), or even [use it today](#usage).*
+Introduction is a minimalist, highly-versatile theme for Hugo. It can be configured as a single page, or as a full-featured site with multiple sections. It is multilingual, responsive, and includes a light and dark theme.
 
-![Thumbnail of Cayman](thumbnail.png)
+![Device mockups](https://github.com/victoriadrake/hugo-theme-introduction/blob/master/images/mockup.png)
 
-## Usage
+Features:
 
-To use the Cayman theme:
+- Multilingual - supports side-by-side content in different language versions
+- Custom index page sections from Markdown files
+- Projects and Blog sections
+- Page load fade-in CSS effect and smooth scrolling to anchor links
+- Straightforward customization via `config.toml`
+- Styled Markdown throughout, including post titles
+- Syntax highlighting
 
-1. Add the following to your site's `_config.yml`:
+Developer-friendly:
 
-    ```yml
-    theme: jekyll-theme-cayman
-    ```
+- Sass files included with instant compiling to CSS thanks to [Hugo Pipes](https://gohugo.io/hugo-pipes/postcss/) and [PostCSS](https://gohugo.io/hugo-pipes/postcss/)
+- Thoughtful use of Sass variables makes creating new colour schemes easy
 
-2. Optionally, if you'd like to preview your site on your computer, add the following to your site's `Gemfile`:
+## Getting started
 
-    ```ruby
-    gem "github-pages", group: :jekyll_plugins
-    ```
+Requires the **extended** version of Hugo. You can find [installation instructions here](https://gohugo.io/getting-started/installing/) (latest version recommended). Here's a handy [Bash function for downloading a specific Hugo version](https://victoria.dev/blog/how-to-do-twice-as-much-with-half-the-keystrokes-using-.bashrc/#bash-function-for-downloading-extended-hugo).
 
-## Customizing
+To make changes to the theme CSS, extended Hugo's [PostCSS](https://gohugo.io/hugo-pipes/postcss/) requires JavaScript packages to compile the styles. You'll need `postcss`, `postcss-cli`, and `autoprefixer`. Install these globally with `npm`.
 
-### Configuration variables
-
-Cayman will respect the following variables, if set in your site's `_config.yml`:
-
-```yml
-title: [The title of your site]
-description: [A short description of your site's purpose]
+```sh
+npm i -g postcss postcss-cli autoprefixer
 ```
 
-Additionally, you may choose to set the following optional variables:
+[Learn how to install and use npm here](https://www.npmjs.com/get-npm).
 
-```yml
-show_downloads: ["true" or "false" to indicate whether to provide a download URL]
-google_analytics: [Your Google Analytics tracking ID]
+Note: If you are using [Hugo as a snap app](https://snapcraft.io/hugo), the above Node.js packages have to be [installed locally inside `exampleSite`](https://gohugo.io/hugo-pipes/postcss/).
+
+```sh
+cd exampleSite/
+npm i postcss postcss-cli autoprefixer
 ```
 
-### Stylesheet
+If you see an error message like:
 
-If you'd like to add your own custom styles:
+```text
+Error: Error building site: POSTCSS: failed to transform "css/main.css" (text/css): resource "sass/sass/style..." not found in file cache
+```
 
-1. Create a file called `/assets/css/style.scss` in your site
-2. Add the following content to the top of the file, exactly as shown:
-    ```scss
-    ---
-    ---
+See [issue #210](https://github.com/victoriadrake/hugo-theme-introduction/issues/210#issuecomment-645661326) for more information.
 
-    @import "{{ site.theme }}";
-    ```
-3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
+## Get the theme
 
-*Note: If you'd like to change the theme's Sass variables, you must set new values before the `@import` line in your stylesheet.*
+Run from the root of your Hugo site:
 
-### Layouts
+```sh
+git clone https://github.com/victoriadrake/hugo-theme-introduction.git themes/introduction
+```
 
-If you'd like to change the theme's HTML layout:
+Alternatively, you can include this repository as a [git submodule](https://git-scm.com/docs/gitsubmodules). This makes it easier to update this theme if you have your Hugo site in git as well:
 
-1. [Copy the original template](https://github.com/pages-themes/cayman/blob/master/_layouts/default.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
-2. Create a file called `/_layouts/default.html` in your site
-3. Paste the default layout content copied in the first step
-4. Customize the layout as you'd like
+```sh
+git submodule add https://github.com/victoriadrake/hugo-theme-introduction.git themes/introduction
+```
 
-### Overriding GitHub-generated URLs
+## Preview the theme
 
-Templates often rely on URLs supplied by GitHub such as links to your repository or links to download your project. If you'd like to override one or more default URLs:
+Introduction ships with an fully configured example site. For a quick preview:
 
-1. Look at [the template source](https://github.com/pages-themes/cayman/blob/master/_layouts/default.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
-2. Specify the URL that you'd like the template to use in your site's `_config.yml`. For example, if the variable was `site.github.url`, you'd add the following:
-    ```yml
-    github:
-      zip_url: http://example.com/download.zip
-      another_url: another value
-    ```
-3. When your site is built, Jekyll will use the URL you specified, rather than the default one provided by GitHub.
+```sh
+cd themes/introduction/exampleSite/
+hugo serve  --themesDir ../..
+```
 
-*Note: You must remove the `site.` prefix, and each variable name (after the `github.`) should be indent with two space below `github:`.*
+Then visit `http://localhost:1313/` in your browser to view the example site.
 
-For more information, see [the Jekyll variables documentation](https://jekyllrb.com/docs/variables/).
+## Add content
 
-## Roadmap
+The following explains how to add content to your Hugo site. You can find sample content in the `exampleSite/` folder.
 
-See the [open issues](https://github.com/pages-themes/cayman/issues) for a list of proposed features (and known issues).
+## Introduction section
 
-## Project philosophy
+Create `index.md`:
 
-The Cayman theme is intended to make it quick and easy for GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users' needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.
+```sh
+hugo new home/index.md
+```
+
+The `title` frontmatter will be the first large heading.
+
+The content of `index.md` will be shown as a subtitle line.
+
+You might want to set `headless` to `true` in the frontmatter. See [headless bundles](https://gohugo.io/content-management/page-bundles/#headless-bundle) for more information.
+
+## Home page
+
+Content for the home page lives under `content/home/`. You may add as many files as you want to in markdown format.
+
+Each markdown file will show as a section on the home page and can be ordered by the `weight` value in the file's frontmatter. You can set `image` to show an image on the left side of the section. The image file must be in the `content/home/` folder.
+
+You may add a contact section by creating
+`contact.md`:
+
+```sh
+hugo new home/contact.md
+```
+
+This will always be shown as the last section on the home page.
+
+## Projects section
+
+Introduction provides an easy way to showcase your projects. Each project can even have its own gallery, shown as an image carousel.
+
+Start by creating an index file for the projects section:
+
+```sh
+hugo new projects/_index.md
+```
+
+Add a `title` and some optional content to the file.
+Add an optional `weight` for ordering projects section.
+
+To create a project, run:
+
+```sh
+hugo new projects/YourProjectName/index.md
+```
+
+The frontmatter of your new file contains some comments to help your configure your project.
+
+You can set `external_link` to make the project link to another website.
+
+Add images to your project by placing image files in the `YourProjectName/` folder. If you add more then one photo, they will display as a carousel gallery. Images will be ordered by filename. The first image will be shown as the project preview image. You can change the order of your images by adding a `weight` to that resource's parameters:
+
+```sh
+resources:
+    - src: NameOfYourImage.jpg
+      params:
+          weight: -100
+project_timeframe: "June-December"
+```
+
+You can add a `project_timeframe` parameter to the frontmatter of your project to optionally display an arbitrary string on the homepage and modal.
+
+## Blog section
+
+Create an index file for the blog:
+
+```sh
+hugo new blog/_index.md
+```
+
+Add an optional `weight` for ordering blog section on your homepage
+
+Create a new blog post with:
+
+```sh
+hugo new blog/YourEntryTitle.md
+```
+
+Posts will also display in the Blog section of the home page.
+
+## Configure your site
+
+From `exampleSite/`, copy `config.toml` to the root folder of your Hugo site and change the fields as you like. Helpful comments are provided.
+
+## Multilingual
+
+Introduction currently ships with support for [many languages](https://github.com/victoriadrake/hugo-theme-introduction/tree/master/i18n). Contributions for other language translations are welcome.
+
+To create a new language translation, add the `.toml` file to the `i18n/` folder. See the existing files for the necessary fields.
+
+See the [hugo documentation](https://gohugo.io/content-management/multilingual/) for more details.
+
+## Menu
+
+Introduction contains a default menu. If you want to override this, you can do so by defining a `menu.main` in `config.toml`.
+
+## Contact section clock
+
+Introduction can optionally show your current local time in your [contact section](https://hugo-introduction.netlify.app/#contact). This uses vanilla JS and variables you provide. You can set this up by copying the settings in the exampleSite `config.toml` for `localTime`, `timeZone`, and `timeFormat`.
+
+## Plausible
+
+You can easily use Plausible.io for analytics by setting `plausible = true` in your `config.toml`. Plausible offers a privacy-friendly alternative to Google Analytics. You'll need your own Plausible account - see [plausible.io](https://plausible.io/) for more.
+
+## Google Analytics
+
+Set `googleAnalytics` in `config.toml` to activate Hugo's [internal Google Analytics template](https://gohugo.io/templates/internal/#google-analytics).
+
+## Disqus
+
+Set `disqusshortname` in `config.toml` to activate Hugo's [internal Disqus template](https://gohugo.io/templates/internal/#disqus).
+
+## Custom CSS
+
+You can add custom CSS files by placing them under `assets/` and adding the paths to the files to the `customCSS` list in `config.toml`.
+
+## Custom JavaScript
+
+You can add custom JavaScript files by placing them under `assets/` and adding the paths to the files to the `customJS` list in `config.toml`.
+
+## Issues
+
+If you have a question or get stuck, please [open an issue](https://github.com/victoriadrake/hugo-theme-introduction/issues) for help and to help those who come after you. The more information you can provide, the better!
 
 ## Contributing
 
-Interested in contributing to Cayman? We'd love your help. Cayman is an open source project, built one contribution at a time by users like you. See [the CONTRIBUTING file](docs/CONTRIBUTING.md) for instructions on how to contribute.
+Contributions for new translations, fixes, and features are welcome.
 
-### Previewing the theme locally
+This theme would not be nearly as awesome without its amazing community of open source [contributors](https://github.com/victoriadrake/hugo-theme-introduction/graphs/contributors). Thank you so much! ❤
 
-If you'd like to preview the theme locally (for example, in the process of proposing a change):
+## License
 
-1. Clone down the theme's repository (`git clone https://github.com/pages-themes/cayman`)
-2. `cd` into the theme's directory
-3. Run `script/bootstrap` to install the necessary dependencies
-4. Run `bundle exec jekyll serve` to start the preview server
-5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
+Copyright (C) 2017-2021 [Victoria Drake](https://victoria.dev/)
 
-### Running tests
+Licensed under the [Apache License, Version 2.0](https://github.com/victoriadrake/hugo-theme-introduction/blob/master/LICENSE) (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
-The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/cibuild`. You'll need to run `script/bootstrap` once before the test script will work.
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
