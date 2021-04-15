@@ -1,5 +1,7 @@
 ---
 layout: default
+title: Arjun Devarajan
+description: Trying to treat people well
 ---
 
 ## My Take on Startups
