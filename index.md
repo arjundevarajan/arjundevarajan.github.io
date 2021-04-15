@@ -1,123 +1,35 @@
 ---
 layout: default
 ---
-does this update properly
-Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](./another-page.html).
+## My Take on Startups
 
-There should be whitespace between paragraphs.
+I've always been interested in startups, but as I've gotten more entrenched in them over time, I've discovered a lot of issues that people in the industry rarely discuss. 
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+![Me](./assets/Arjun_Headshot.jpg)
 
-# Header 1
+Many of these have to do with the inherent flaws of a system of late-stage capitalism that encourages the rapid growth of companies at the explicit expense of workers' rights and livelihoods. That being said, given that this is norm in the US in 2021, I believe there's a better way of working within it (at least until it's possible to dismantle it entirely). 
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+[My last startup experience](./startups/toucan-ai.html) especially provided me with a new frame of reference on what kind of company and workplace I'm interested in running in the future, and what version of employership I plan to offer (next time I'm someone's employer). 
 
-## Header 2
+## My Experiences
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
+First, some background: here's a collection of [startups](./collections/startups.html) I've worked on over the years.
 
-### Header 3
+## Other Work
 
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
+Here are some [ads](./collections/ads.html) I've created to promote various projects.
 
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
+Here are some [videos](./collections/videos.html) I've writted and edited for fun.
 
-#### Header 4
+Here are some pieces of [content](./collections/content.html) I've run, at various points, on a recurring basis.
 
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
+Here are some of the [web projects](./collections/projects.html) I've worked on or helped lead the product vision for.
 
-##### Header 5
+Here are some of examples of [customers](./collections/reviews.html) who have been really excited about the projects I've worked on.
 
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
+## My Thoughts
 
-###### Header 6
+[These](./collections/ethics.html) are some thoughts on what I consider to be necessary in a workplace that truly cares for its employees' well-being and the improvement of society.
 
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
+[For reference](./collections/markdown.html)
