@@ -12,4 +12,4 @@ _yay_
 - Toucan blog
 - Snacks for the Socially Distanced
 
-[back](../)
+[Return to homepage](../)

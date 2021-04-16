@@ -8,4 +8,4 @@ description: The best pre-CEO experience I could have
 
 _yay_
 
-[back](./startups.html)
+[See the full startup list](../startups.html)

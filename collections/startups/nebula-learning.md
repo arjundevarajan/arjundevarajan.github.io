@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Nebula Learning
-description: A CEO at last
+description: Founding a company, for real, at last
 ---
 
 ## Welcome to another page
@@ -10,4 +10,4 @@ Melissa & Doug
 
 _yay_
 
-[back](./startups.html)
+[See the full startup list](../startups.html)

@@ -8,4 +8,4 @@ description: My first attempt at a startup 🥴
 
 _yay_
 
-[back](./startups.html)
+[See the full startup list](../startups.html)

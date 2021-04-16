@@ -12,4 +12,4 @@ _yay_
 - Shopify reviews
 - screenshot of Nebula Learning reviews
 
-[back](../)
+[Return to homepage](../)

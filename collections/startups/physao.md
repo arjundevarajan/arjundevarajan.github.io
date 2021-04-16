@@ -8,4 +8,4 @@ description: My first time working for a real startup with ambitions
 
 _yay_
 
-[back](./startups.html)
+[See the full startup list](../startups.html)

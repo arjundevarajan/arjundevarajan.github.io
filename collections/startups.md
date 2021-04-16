@@ -4,25 +4,31 @@ title: Startups
 description: The various startups I've been involved in
 ---
 
-### Split It Rides
 
-[Split It Rides](./startups/split-it-rides.html)
+## Currently
+[![AddShoppers](../../assets/images/as.png)](./startups/addshoppers.html)
 
-### Physao
+&nbsp;
+
+## Companies I've Led
+[![Toucan AI](../../assets/images/toucan_logo.png)](./startups/toucan-ai.html)
+
+&nbsp;
+
+[![Nebula Learning](../../assets/images/nebula_logo.png)](./startups/nebula-learning.html) 
+
+&nbsp;
+
+## Startups I've Worked For/On in College
+[![Farmshots](../../assets/images/farmshots.png)](./startups/farmshots.html)
+
+&nbsp;
+
 [Physao](./startups/physao.html)
 
-### Farmshots
-[Farmshots](./startups/farmshots.html)
+&nbsp;
 
-### Nebula Learning
-[Nebula Learning](./startups/nebula-learning.html) 
+[![Split It Rides](../../assets/images/split_it_logo.png)](./startups/split-it-rides.html)
 
-### Toucan AI
-[Toucan AI](./startups/toucan-ai.html)
 
-### AddShoppers
-[AddShoppers](./startups/addshoppers.html)
-
-_yay_
-
-[back](../)
+[Return to homepage](../)

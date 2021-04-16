@@ -8,4 +8,4 @@ description: Necessities for providing a fair workplace
 
 _yay_
 
-[back](../)
+[Return to homepage](../)
