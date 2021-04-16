@@ -6,7 +6,6 @@ description: As they say, customer love
 
 ## Welcome to another page
 
-_yay_
 
 - Video of Niki
 - Shopify reviews
