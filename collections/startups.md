@@ -14,17 +14,17 @@ Note: all of the logos below are clickable if you're curious to hear about my ex
 
 ## Companies I've Led
 
-[![Toucan AI](../../assets/images/toucan_logo.png)](./toucan-ai)
+[![Toucan AI](../../assets/images/toucan_logo.png)](./startups/toucan-ai)
 
 &nbsp;
 
-[![Nebula Learning](../../assets/images/nebula_logo.png)](./nebula-learning) 
+[![Nebula Learning](../../assets/images/nebula_logo.png)](./startups/nebula-learning) 
 
 &nbsp;
 
 ## Startups I've Worked For/On in College
 
-[![Farmshots](../../assets/images/farmshots_logo.png)](./farmshots)
+[![Farmshots](../../assets/images/farmshots_logo.png)](./startups/farmshots)
 
 &nbsp;
 
@@ -32,7 +32,7 @@ Note: all of the logos below are clickable if you're curious to hear about my ex
 
 &nbsp;
 
-[![Split It Rides](../../assets/images/split_it_logo.png)](./split-it-rides)
+[![Split It Rides](../../assets/images/split_it_logo.png)](./startups/split-it-rides)
 
 
 [Return to homepage](../..)
