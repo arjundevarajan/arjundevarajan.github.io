@@ -8,7 +8,7 @@ Note: all of the logos below are clickable if you're curious to hear about my ex
 
 ## Currently
 
-[![AddShoppers](../../assets/images/as.png)](./addshoppers)
+[![AddShoppers](../../assets/images/as.png)](./startups/addshoppers)
 
 &nbsp;
 

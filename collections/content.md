@@ -25,7 +25,7 @@ I conducted, edited, released, and promoted My First Sale interviews on all majo
 
 ## Snacks for the Socially Distanced {#s4tsd}
 
-When the pandemic first began, my friend (and the co-founder of [**Toucan**](./startups/toucan)) Vishnu and I realized we were looking at several months (or even years) of collective isolation and inability to safely eat food at restaurants. We were roommates at the time, and have always shared a deep and intense love for trying new and exciting foods, so this seemed like the only way to make up for the gaping hole that had now been introduced into our lives.
+When the pandemic first began, my friend (and the co-founder of [**Toucan**](./startups/toucan-ai)) Vishnu and I realized we were looking at several months (or even years) of collective isolation and inability to safely eat food at restaurants. We were roommates at the time, and have always shared a deep and intense love for trying new and exciting foods, so this seemed like the only way to make up for the gaping hole that had now been introduced into our lives.
 
 Thus, we began [**Snacks for the Socially Distanced**](https://www.snackspodcast.com), the podcast. 
 
