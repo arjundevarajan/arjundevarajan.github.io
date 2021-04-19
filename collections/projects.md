@@ -10,7 +10,7 @@ description: The web projects I've worked on
 
 ## Shopify How To {#shopifyHowTo}
 
-[Shopify How To](https://shopifyhowto.com/) was a project under the Toucan AI wing that was intended to provide small e-commerce business owners with a way of automatedly auditing and verifying their web store for mistakes and improvements that would drive conversions. 
+[Shopify How To](https://shopifyhowto.com/) was a project under the Toucan AI wing that was intended to provide small e-commerce business owners (who use Shopify) with a way of automatedly auditing and verifying their web store for mistakes and improvements that would drive conversions. 
 
 ## Small Box Shops {#smallBoxShops}
 
@@ -18,20 +18,25 @@ description: The web projects I've worked on
 
 ## Toucan Demo Site {#toucanDemo}
 
-[Toucan's Demo Site](https://toucandemo.com/) is a project under the Toucan AI wing
+[Toucan's Demo Site](https://toucandemo.com/) is a project under the Toucan AI wing intended to showcase the Toucan AI product as it exists on a demo e-commerce store, built with Shopify. [This video](./ads#explanatory) indicates how quickly Toucan was installed on this site (though it's no longer active on the site now). 
 
 ## Nebula Learning {#nebula}
 
+[Nebula Learning](./startups/nebula-learning) is the educational tech company I spent 2 years building with Vishnu and a few other classmates at Duke before working on Toucan. While the site is no longer available publicly online, it is available on a private Github repo that I can share, if interested. 
+
 ## Snacks for the Socially Distanced {#snackFM}
+
+[Snacks for the Socially Distanced](https://www.snackspodcast.com) is the (for a while) [daily snack review podcast](./content#s4tsd) that Vishnu and I started to help bring people joy during the pandemic. 
+
+## Farmshots {#farmshots}
+
+[Farmshots](https://www.farmshots.com) is the [agricultural technology startup](./startups/farmshots) I worked for as it was going through the YCombinator fellowship program. My web development was primarily to help build their analytics platform, which took farming data and displayed attractive graphs for customers to utilize.
 
 ## Various school projects {#school}
 
-Volyoome, EcoDiversity for hackathons
-
-The Virtual Museums exhibit
-
-Kaggle remote sensing competition (tied in to a paper I co-wrote that was published in Scientific Data)
-
-- Various pitch decks I've made (?)
+I've done a variety of school projects that have involved web development of various sorts, including:
+- [a Virtual Farmer's Market walkthrough](https://github.com/susiechoi/VirtualFarmersMarket) for a virtual museum exhibit
+- a Python app called Volyoome that automatically adjusts computer volume based on external noise input (created for [HackDuke](https://www.hackduke.org/))
+- an ArcGIS app called Ecodiversity that allows for the crowdsourcing and environmental biodiversity data (also created for HackDuke)
 
 [Return to homepage](../)
