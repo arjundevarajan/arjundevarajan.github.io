@@ -16,7 +16,7 @@ My friend and fellow Cube member, Daniel Chander (still the CTO of Vigor), had c
 
 ## What I did for Physao
 
-Personally, I was excited about the seriousness with which the existing team was taking the startup—-the team of 4-5 had already built out the hardware device and had several clinics who were interested in testing out the solution. I was also enticed by the ability to get exposure to real-world software development. Physao needed help building out their Android application, which was supposed to connect to the device and track and graph lung function for the patient. 
+Personally, I was excited about the seriousness with which the existing team was taking the startup—the team of 4-5 had already built out the hardware device and had several clinics who were interested in testing out the solution. I was also enticed by the ability to get exposure to real-world software development. Physao needed help building out their Android application, which was supposed to connect to the device and track and graph lung function for the patient. 
 
 It was basic stuff, but I had never really built something for production before (only Hackathon web projects til that point, really), and I was hungry to get started. 
 

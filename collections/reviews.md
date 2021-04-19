@@ -4,9 +4,9 @@ title: Reviews
 description: As they say, customer love
 ---
 
-While it doesn't have to be the _most_ important consideration when building a new project, having users/customers who really love what you're doing is often a major motivatiing factor the people you're working with (coworkers, investors, or otherwise) to keep going. 
+While it doesn't have to be the _most_ important consideration when building a new project, having users/customers who really love what you're doing is often a major motivating factor for the people you're working with (coworkers, investors, or otherwise) to keep going. 
 
-There's certainly merit to building things for yourself and only/primarily yourself, but if you have users/customers who are thrilled with your work, it not only can inspire you when you're questioning yourself, but even help convince others to join your cause into the future.
+There's certainly merit to building things primarily for yourself, but if you have users/customers who are thrilled with your work, it not only can inspire you when you're questioning yourself, but even help convince others to join your cause into the future.
 
 ## Toucan AI Customer Testimonial Video {#testimonial}
 This testimonial video was created with the extremely-appreciated help of [Niki Shamdasani](https://www.linkedin.com/in/nikishamdasani), the co-founder of [Sani Designs](https://www.sanidesigns.com) and an early advocate of my latest company, [Toucan AI](./startups/toucan-ai):

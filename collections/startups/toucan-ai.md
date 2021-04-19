@@ -24,7 +24,7 @@ Ultimately, even though the final outcome wasn't _exactly_ what we'd envisioned,
 
 ## The Takeaways {#takeaways}
 
-Ultimately, there were countless lessons I learned from my experiences with Toucan, and describing those in detail would not result in an appropriately concise and readable singular webpage, but a couple of them do stand out. 
+There were countless lessons I learned from my experiences with Toucan, and describing those in detail would not result in an appropriately concise singular webpage, but a couple of them do stand out. 
 
 Carefully choosing the people you work with is the most important decision you'll make throughout your entire startup experience. You'll be asked to weigh in on and make decisions about innumerable aspects of your company's marketing, sales, product development, management, and moral compass, and having a team you can feel comfortable being open and communicative with will make all the difference as you're encountering these new challenges. 
 

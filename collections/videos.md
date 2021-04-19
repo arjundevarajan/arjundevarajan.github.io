@@ -20,7 +20,7 @@ Also created for TSA, in 48 hours at an on-site competition:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6nk3ALpiz8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## The Call
-Also created for TSA, in 48 hours at an on-site competitiion:
+Also created for TSA, in 48 hours at an on-site competition:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7W6vL496MeE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

@@ -15,11 +15,11 @@ Quick sidenote—if you'd bought Shopify stock when we published [**this article
 
 ## My First Sale {#mfs}
 
-[**My First Sale**](https://toucanai.com/press/podcast) is/was a podcast in which I interviewed small e-commerce business owners and tried to paint an honest and authentic picture about their successes and struggles. Many of the interviewees were early Toucan customers and advocates, and many of them are people I now consider to be friends. 
+[**My First Sale**](https://toucanai.com/press/podcast) is a podcast in which I interviewed small e-commerce business owners and tried to paint an honest and authentic picture about their successes and struggles. Many of the interviewees were early Toucan customers and advocates, and many of them are people I now consider to be friends. 
 
 We started the podcast at the beginning of 2020, initially releasing episodes weekly, then dialing back a bit when the pandemic started ramping up and other concerns took over for people. During the time that the podcast was active, we had a small but dedicated following of people interested in stories from small business owners!
 
-My First Sale interviews were conducted, edited, released, and promoted by me on all major podcast platforms, including [Apple Podcasts](https://podcasts.apple.com/us/podcast/my-first-sale/id1494151521), [Spotify](https://open.spotify.com/show/0pzI5U39nOQOIBwSMiVTNu), and [YouTube](https://youtube.com/playlist?list=PL9vmrq0PKGifpooq5xLbnx9SO0OF0qDWp).
+I conducted, edited, released, and promoted My First Sale interviews on all major podcast platforms, including [Apple Podcasts](https://podcasts.apple.com/us/podcast/my-first-sale/id1494151521), [Spotify](https://open.spotify.com/show/0pzI5U39nOQOIBwSMiVTNu), and [YouTube](https://youtube.com/playlist?list=PL9vmrq0PKGifpooq5xLbnx9SO0OF0qDWp).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL9vmrq0PKGifpooq5xLbnx9SO0OF0qDWp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

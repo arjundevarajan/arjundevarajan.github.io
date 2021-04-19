@@ -1,43 +1,4 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-
-    
-    <meta charset="UTF-8">
-
-<!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Ethics of Startups | Arjun Devarajan</title>
-<meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Ethics of Startups" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Recommendations for providing a fair workplace" />
-<meta property="og:description" content="Recommendations for providing a fair workplace" />
-<meta property="og:site_name" content="Arjun Devarajan" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Ethics of Startups" />
-<script type="application/ld+json">
-{"headline":"Ethics of Startups","url":"/collections/ethics.html","description":"Recommendations for providing a fair workplace","@type":"WebPage","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#157878">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=">
-  </head>
-  <body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
-
-    <header class="page-header" role="banner">
-      <h1 class="project-name">Ethics of Startups</h1>
-      <h2 class="project-tagline">Recommendations for providing a fair workplace</h2>
-      
-      
-    </header>
-
-    <main id="content" class="main-content" role="main">
-      <h2 id="benefits-and-their-whys">Benefits and Their Whys</h2>
+I"�<h2 id="benefits-and-their-whys">Benefits and Their Whys</h2>
 
 <p>These are the benefits I plan to offer, next time I’m someone’s employer:</p>
 
@@ -62,7 +23,7 @@
     </tr>
     <tr>
       <td style="text-align: left">Unlimited PTO (paid time off) + mandatory minimum time taken off</td>
-      <td style="text-align: left">Unlimited PTO is fairly common for tech startups these days, but because of our society’s workaholic mentality, people rarely take that time off. Encouraging a minimum amount taken off (2 weeks a year?) would be benificial for everyone</td>
+      <td style="text-align: left">Unlimited PTO is fairly common for tech startups these days, but because of our society’s workaholic mentality, people rarely take that time off. Encouraging a minimum amount taken off (2 weeks a year?) would be benificial for everyone.</td>
       <td style="text-align: left">Absolute necessity</td>
     </tr>
     <tr>
@@ -82,7 +43,7 @@
     </tr>
     <tr>
       <td style="text-align: left">1 hour/week during the workweek for dedicated mental health time (encouraged for therapy)</td>
-      <td style="text-align: left">Every single person on the planet would benefit from seeing a regular, competent, free therapist. If mental health is universally covered, we should be encouraging everyone to take advantage of it</td>
+      <td style="text-align: left">Every single person on the planet would benefit from seeing a regular, competent, free therapist. If mental health is universally covered, we should be encouraging everyone to take advantage of it.</td>
       <td style="text-align: left">Absolute necessity</td>
     </tr>
     <tr>
@@ -92,17 +53,17 @@
     </tr>
     <tr>
       <td style="text-align: left">Engaging and exciting work</td>
-      <td style="text-align: left">This is great for people who find fulfillment out of their work, but not completely mandatory IMO, since there are a lot of people who see work as a means to an end for their lifestyles, and that’s a perfectly acceptable way of living. But giving people exciting work to do, if they want it, is a good thing</td>
+      <td style="text-align: left">This is great for people who find fulfillment out of their work, but not completely mandatory IMO, since there are a lot of people who see work as a means to an end for their lifestyles, and that’s a perfectly acceptable way of living. But giving people exciting work to do, if they want it, is a good thing.</td>
       <td style="text-align: left">Recommended</td>
     </tr>
     <tr>
       <td style="text-align: left">Location-flexible and remote-first</td>
-      <td style="text-align: left">This should be fairly self-explanatory for people in a post-pandemic world, but now that we have the tools to sustain remote work, it’s something that everyone can and should be taking advantage of</td>
+      <td style="text-align: left">This should be fairly self-explanatory for people in a post-pandemic world, but now that we have the tools to sustain remote work, it’s something that everyone can and should be taking advantage of.</td>
       <td style="text-align: left">Recommended</td>
     </tr>
     <tr>
       <td style="text-align: left">Democratically elected leadership (or some type of enforced “downward accountability”)</td>
-      <td style="text-align: left">Currently, CEOs and the people in control of companies have almost unchallenged power. While unions help to organize labor into receiving fair working conditions, treating companies like we do other leadership systems and giving everyone a voice would drastically improve inequality</td>
+      <td style="text-align: left">Currently, CEOs and the people in control of companies have almost unchallenged power. While unions help to organize labor into receiving fair working conditions, treating companies like we do other leadership systems and giving everyone a voice would drastically improve inequality.</td>
       <td style="text-align: left">Recommended</td>
     </tr>
   </tbody>
@@ -111,12 +72,4 @@
 <p>Note: this list is ongoing, so it may see updates as you continually check on it</p>
 
 <p><a href="../">Return to homepage</a></p>
-
-
-      <footer class="site-footer">
-        
-        <!-- <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span> -->
-      </footer>
-    </main>
-  </body>
-</html>
+:ET

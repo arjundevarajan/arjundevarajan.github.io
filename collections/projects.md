@@ -6,17 +6,17 @@ description: The web projects I've worked on
 
 ## Toucan AI {#toucan}
 
-## Shopify How To (#shopifyHowTo)
+## Shopify How To {#shopifyHowTo}
 
-## Small Box Shops (#smallBoxShops)
+## Small Box Shops {#smallBoxShops}
 
-## Toucan Demo Site (#toucanDemo)
+## Toucan Demo Site {#toucanDemo}
 
-## Nebula Learning (#nebula)
+## Nebula Learning {#nebula}
 
-## Snacks for the Socially Distanced (#snackFM)
+## Snacks for the Socially Distanced {#snackFM}
 
-## Various school projects (#school)
+## Various school projects {#school}
 
 Volyoome, EcoDiversity for hackathons
 

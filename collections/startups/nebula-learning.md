@@ -28,7 +28,7 @@ We ended up applying to and getting into [Melissa & Doug Entrepreneurs](https://
 >
 > The point of the program is to provide guidance and mentorship to students as they're building their startups (from people who have founded companies themselves), as well as connections to investors and relevant people and a Demo Day at Melissa & Doug's house at the end of the program, during which you pitch to a group of investors. 
 
-The summer between junior and senior year, through the M&D Enterpreneurs program, Vishnu and I (and a few of our classmates) built out the web platform and got together a group of interested teachers and schools to pilot out the program. 
+The summer between junior and senior year, through the M&D Entrepreneurs program, Vishnu and I (and a few of our classmates) built out the web platform and got together a group of interested teachers and schools to pilot out the program. 
 
 Ultimately, we ended up piloting it in 7 schools (public, private, and charter) with over 500 students throughout, both as summer and in-year programs! We had [a lot of excitement from teachers and students](../reviews#nebulaReviews) (and even some commitment from investors at the M&D Demo Day), but ultimately, we found that the money from schools just wasn't there to help fund what we were looking to build. 
 

@@ -22,16 +22,16 @@ First, some background: here's a collection of [**startups**](./collections/star
 
 Here are some [**ads**](./collections/ads) I've created to promote various projects.
 
-Here are some [**videos**](./collections/videos) I've writted and edited for fun.
+Here are some [**videos**](./collections/videos) I've written and edited for fun.
 
 Here are some pieces of [**content**](./collections/content) I've run, at various points, on a recurring basis.
 
 Here are some of the [**web projects**](./collections/projects) I've worked on or helped lead the product vision for.
 
-Here are some of examples of [**customers**](./collections/reviews) who have been really excited about the projects I've worked on.
+Here are some examples of [**customers**](./collections/reviews) who have been really excited about the projects I've worked on.
 
 <!-- Here are some examples of [**non-startup-related things**](./collections/notstartups) I've been involved with in recent years. -->
 
 # My Thoughts {#thoughts}
 
-[These are some **thoughts**](./collections/ethics) on what I consider to be necessary in a workplace that truly cares for its employees' well-being and the improvement of society.
+[**These are some thoughts**](./collections/ethics) on what I consider to be necessary in a workplace that truly cares for its employees' well-being and the improvement of society.
