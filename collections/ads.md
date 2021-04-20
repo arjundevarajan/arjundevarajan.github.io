@@ -15,7 +15,7 @@ This video was included in our [pitch](https://www.youtube.com/watch?v=u4ejTNQtq
 <iframe width="560" height="315" src="https://www.youtube.com/embed/08TAFfKFwuw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Toucan AI Customer Testimonial Video {#testimonial}
-This testimonial video was created with the extremely-appreciated help of [Niki Shamdasani](https://www.linkedin.com/in/nikishamdasani), the co-founder of [Sani Designs](https://www.sanidesigns.com) and an early advocate of Toucan. It's what all prospective Toucan clients saw right before they decided whether or not to install us onto their site:
+This testimonial video was created with the much-appreciated help of [Niki Shamdasani](https://www.linkedin.com/in/nikishamdasani), the co-founder of [Sani Designs](https://www.sanidesigns.com) and an early advocate of Toucan. It's what all prospective Toucan clients saw right before they decided whether or not to install us onto their site:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VXDF_wyeVmI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

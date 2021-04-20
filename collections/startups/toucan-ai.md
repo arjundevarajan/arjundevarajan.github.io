@@ -6,13 +6,13 @@ description: My most in-depth startup experience yet
 
 # What is Toucan?
 
-Put short, [Toucan AI](https://www.toucanai.com) is an AI sales bot for e-commerce stores that can be set up nearly instantly. 
+[Toucan AI](https://www.toucanai.com) is an AI sales bot for e-commerce stores that can be set up nearly instantly. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/k3P_awQEJtU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-My friend [Vishnu](https://www.linkedin.com/in/vishnu-menon/) (who I met while in undergrad at [Duke](https://www.duke.edu)) and I co-founded the company right out of college and spent nearly 3 years trying to build something special in the conversational AI space. 
+My friend [Vishnu](https://www.linkedin.com/in/vishnu-menon/) (who I met while we were undergrads at [Duke](https://www.duke.edu)) and I co-founded the company right out of college and spent nearly 3 years trying to build something special in the conversational AI space. 
 
-Ultimately, even though the final outcome wasn't _exactly_ what we'd envisioned, we learned more throughout the process than we ever could've imagined, going through nearly every piece of the stereotypical startup journey there is (fundraising, hiring, product development, sales, marketing, firing, and acquisitions, to name a few). 
+Ultimately, even though the final outcome wasn't exactly what we'd envisioned, we learned more throughout the process than we ever could've imagined, going through nearly every piece of the stereotypical startup journey there is (fundraising, hiring, product development, sales, marketing, firing, and acquisitions, to name a few). 
 
 ## The Timeline {#timeline}
 
@@ -24,11 +24,11 @@ Ultimately, even though the final outcome wasn't _exactly_ what we'd envisioned,
 
 ## The Takeaways {#takeaways}
 
-There were countless lessons I learned from my experiences with Toucan, and describing those in detail would not result in an appropriately concise singular webpage, but a couple of them do stand out. 
+I've learned countless lessons from my experiences with Toucan, far too many to list concisely here, but a couple of them in particular stand out. 
 
-Carefully choosing the people you work with is the most important decision you'll make throughout your entire startup experience. You'll be asked to weigh in on and make decisions about innumerable aspects of your company's marketing, sales, product development, management, and moral compass, and having a team you can feel comfortable being open and communicative with will make all the difference as you're encountering these new challenges. 
+Carefully choosing the people you work with is the most important decision you'll make throughout your entire startup experience. You'll be asked to weigh in on and make decisions about innumerable aspects of your company's marketing, sales, product development, management, and moral compass. Having a team you can feel comfortable being open and communicative with will make all the difference as you're encountering these new challenges. 
 
-Also, working on Toucan for several years and then consequently working for [another startup](./addshoppers) in the same industry have contributed to my [strongly held opinions on workplace and employer ethics](../ethics). While I'm currently neither my own employer nor anyone else's, it's likely that I'll be in that position again at some point in the future, and when I do, I will be using it to improve the startling imbalance that exists in the world, rather than contributing to it. 
+Also, working on Toucan for several years and then working for [another startup](./addshoppers) in the same industry have contributed to my [strongly held opinions on workplace and employer ethics](../ethics). While I'm currently neither my own employer nor anyone else's, it's likely that I'll be in that position again at some point in the future, and when I do, I will be using it to improve the startling imbalance that exists in the world, rather than contributing to it. 
 
 [Check out my next startup adventure](./addshoppers) (or my [previous one](./nebula-learning))
 

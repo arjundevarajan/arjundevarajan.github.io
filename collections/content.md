@@ -29,7 +29,7 @@ When the pandemic first began, my friend (and the co-founder of [**Toucan**](./s
 
 Thus, we began [**Snacks for the Socially Distanced**](https://www.snackspodcast.com), the podcast. 
 
-Since we could no longer eat at restaurants (both of our favorite personal pastimes), we instead went to our local grocery store(s) and racked up as many weird and exciting snacks as we could find to review in great detail, seriousness, and frequency. 
+We went to our local grocery store(s) and racked up as many weird and exciting snacks as we could find to review in great detail, seriousness, and frequency. 
 
 While we now only record the occasional episode, there was a while in which we were recording, editing, releasing, and posting on social media about a new episode *every single day*. And despite no true coordinated marketing campaign, we not only managed to amass a loyal (albeit small) following of listeners, but we even ended up receiving a **ton** of free snacks to review from various companies. 
 

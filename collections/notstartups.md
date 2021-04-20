@@ -5,7 +5,7 @@ description: The projects I've worked on that *aren't* startups
 ---
 
 ## Snacks for the Socially Distanced
-This has been written about extensively in [other sections of this site](./content#s4tsd), but this podcast is truly my pride and joy. (Vishnu and) I are obsessed with food, and finding an excuse to review grocery store snacks brought us (or at least me) a lot of serotonin over the past year in a time when that was scarce. 
+I've written extensively about this in [other sections of this site](./content#s4tsd), but this podcast is truly my pride and joy. (Vishnu and) I are obsessed with food, and finding an excuse to review grocery store snacks brought us (or at least me) a lot of serotonin over the past year in a time when that was scarce. 
 
 In case you missed this on other pages, we got a **ton** of free snacks from various companies that wanted us to review them, and we even had a (small but) loyal fanbase. 
 

@@ -24,7 +24,7 @@ Thus, we decided to build a web app that helps people driving long distances fin
 
 Ultimately, Split It never amounted to anything beyond a lot of [Hunt Library](https://www.lib.ncsu.edu/huntlibrary) whiteboard meetings, a few pictures taken here and there, and some basic wireframing and mockups. Regardless, it taught how much I value autonomy and the feeling of building something new in my work. Even though it wasn't conventionally successful by any reasonable metric, it solidified my belief that startups were the place I needed to be. 
 
-![Me Jaimish Eddie 1](../../assets/images/split_it.jpg)
+![Me Jaimish Eddie 1](../../assets/images/split_it.JPG)
 
 <!-- ![Me Jaimish Eddie 2](../../assets/images/split_it_2.jpg)
 

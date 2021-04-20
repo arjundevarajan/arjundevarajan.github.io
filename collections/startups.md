@@ -28,7 +28,7 @@ Note: all of the logos below are clickable if you're curious to hear about my ex
 
 &nbsp;
 
-<a href="./physao" style="font-size:30px">Physao (no logo, unfortunately)</a>
+<a href="./startups/physao" style="font-size:30px">Physao (no logo, unfortunately)</a>
 
 &nbsp;
 

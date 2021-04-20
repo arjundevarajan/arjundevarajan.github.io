@@ -9,7 +9,7 @@ While it doesn't have to be the _most_ important consideration when building a n
 There's certainly merit to building things primarily for yourself, but if you have users/customers who are thrilled with your work, it not only can inspire you when you're questioning yourself, but even help convince others to join your cause into the future.
 
 ## Toucan AI Customer Testimonial Video {#testimonial}
-This testimonial video was created with the extremely-appreciated help of [Niki Shamdasani](https://www.linkedin.com/in/nikishamdasani), the co-founder of [Sani Designs](https://www.sanidesigns.com) and an early advocate of my latest company, [Toucan AI](./startups/toucan-ai):
+This testimonial video was created with the much-appreciated help of [Niki Shamdasani](https://www.linkedin.com/in/nikishamdasani), the co-founder of [Sani Designs](https://www.sanidesigns.com) and an early advocate of my latest company, [Toucan AI](./startups/toucan-ai):
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VXDF_wyeVmI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
