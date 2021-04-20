@@ -4,7 +4,7 @@ title: Arjun Devarajan
 description: Doing my best to treat people well
 ---
 
-I'm Arjun Devarajan, a Duke grad and multiple-time startup founder who's interested in building ethical startups. 
+I'm Arjun Devarajan, a graduate of Duke University who has built multiple startups and who is interested in building ethical ones. 
 
 # My Take on Startups {#myTake}
 
