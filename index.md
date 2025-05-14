@@ -34,6 +34,8 @@ Here are some examples of [**customers**](./collections/reviews) who have been r
 
 <!-- Here are some examples of [**non-startup-related things**](./collections/notstartups) I've been involved with in recent years. -->
 
+<img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=833766f2-f52f-4ace-be44-0fa1d581571a" />
+
 # My Thoughts {#thoughts}
 
 [**These are some thoughts**](./collections/ethics) on what I consider to be necessary in a workplace that truly cares for its employees' well-being and the improvement of society.
