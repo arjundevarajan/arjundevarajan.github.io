@@ -151,6 +151,10 @@
   /* Rows that only make sense on touch screens (pinch/drag) — shown in the
      mobile media query below. */
   .mobile-only { display: none; }
+  /* Inline variants used inside walkthrough tips to swap a clause per device
+     (e.g. desktop "Go to Arjun" ↔ mobile "Arjun" button). */
+  .mobile-only-inline { display: none; }
+  .desktop-only { display: inline; }
 
   /* Magnifier that expands the search field on mobile; hidden on desktop. */
   .search-toggle {
@@ -393,11 +397,11 @@
     color: var(--ink);
     margin-bottom: 3px;
     padding-right: 14px;   /* clear the corner sex indicator */
-    /* Long single-word surnames are first shrunk to fit by fitName() in JS; this
-       is the last-resort safety so they wrap (and hyphenate where possible)
-       rather than ever spilling past the card edge. */
+    /* Long single-word surnames are shrunk to fit by fitName() in JS. As a
+       last-resort safety, allow break-word so nothing spills past the card
+       edge — but no hyphenation, because names should never be split mid-word
+       (e.g. "Devarajan" would render as "De-varajan"). */
     overflow-wrap: break-word;
-    hyphens: auto;
   }
   .person.center .p-name { color: var(--oxblood); }
   .p-years {
@@ -532,6 +536,9 @@
 
     /* Touch-only walkthrough rows (pinch/drag) */
     .mobile-only { display: list-item; }
+    /* Inline device swap for walkthrough tips */
+    .mobile-only-inline { display: inline; }
+    .desktop-only { display: none; }
   }
   @media (prefers-reduced-motion: reduce) {
     .person { transition: opacity .3s ease; }
@@ -574,7 +581,7 @@
         <li>Click/tap any individual name to move that person to the center and see their immediate family (their parents, siblings, spouse/partner, children, direct aunts/uncles, and first cousins).</li>
         <li>Tap the Cousins toggle to remove/add cousins from the view to simplify things.</li>
         <li>Continue tapping to travel through the family tree, one person at a time. You can use the &larr; and &rarr; buttons (in the bottom-left) to go backward and forward.</li>
-        <li>Use the search bar (in the top-right) to find anyone by name, or use Go to Arjun / Go to Nupur to jump home.</li>
+        <li>Use the search bar (in the top-right) to find anyone by name, <span class="desktop-only">or use Go to Arjun / Go to Nupur</span><span class="mobile-only-inline">or use the Arjun / Nupur buttons</span> to jump home.</li>
         <li class="mobile-only">Pinch, double-tap, or use +/&minus; to zoom, and drag to move around.</li>
       </ol>
       <button id="welcome-go" class="gate-btn welcome-done">Got it</button>
@@ -1268,6 +1275,9 @@ const svg    = document.getElementById('links');
 let centerId = pickDefaultCenter();
 let showCousins = true;                 // toggled by the header switch
 let view = { x: 0, y: 0, scale: 1 };   // pan/zoom of the whole canvas
+// timestamp until which any card click is treated as the tail of a pan (see
+// enablePan / card click handlers). 0 means "not just dragged".
+let justDraggedUntil = 0;
 let originX = 0, originY = 0;           // where (0,0) of tree-space sits on screen
 let pendingFit = true;                  // when true, next render() sets an auto-fit zoom
 
@@ -1343,6 +1353,9 @@ function personCard(node, x, y){
   if(node.id !== centerId){
     el.querySelector('.card').addEventListener('click', (e)=>{
       e.stopPropagation();
+      // Ignore the click that follows a drag-from-card gesture — enablePan sets
+      // this brief window so panning off a card doesn't also recenter on them.
+      if(e.timeStamp < justDraggedUntil) return;
       recenter(node.id);
     });
   }
@@ -1512,6 +1525,9 @@ function refreshCardInner(el, node){
   if(node.id !== centerId){
     el.querySelector('.card').addEventListener('click', (e)=>{
       e.stopPropagation();
+      // Ignore the click that follows a drag-from-card gesture — enablePan sets
+      // this brief window so panning off a card doesn't also recenter on them.
+      if(e.timeStamp < justDraggedUntil) return;
       recenter(node.id);
     });
   }
@@ -1653,24 +1669,43 @@ function applyView(){
 }
 
 (function enablePan(){
-  let down=false, sx=0, sy=0, ox=0, oy=0, lastTap=null;
+  // Pan starts on ANY pointerdown inside the stage — including on a card, since
+  // cards dominate the screen and requiring users to grab whitespace makes the
+  // tree feel undraggable on phones. We keep the card's own tap-to-recenter by
+  // only PROMOTING the gesture to a pan once the finger moves past a small
+  // threshold, and by swallowing the follow-up `click` on the card if it did.
+  let down=false, sx=0, sy=0, ox=0, oy=0, lastTap=null, movedFar=false, downOnCard=false;
+  const MOVE_THRESH = 6;   // px — below this the gesture is a tap, not a drag
   const pinch = { active:false, startDist:0, startScale:1 };
   stage.addEventListener('pointerdown', e=>{
-    if(e.target.closest('.person')) return; // don't pan when grabbing a card
     if(pinch.active) return;                // ignore while pinching
-    down=true; sx=e.clientX; sy=e.clientY; ox=view.x; oy=view.y;
-    stage.classList.add('panning');
+    down=true; movedFar=false;
+    downOnCard = !!e.target.closest('.person');
+    sx=e.clientX; sy=e.clientY; ox=view.x; oy=view.y;
     try { stage.setPointerCapture(e.pointerId); } catch(_){}
   });
   stage.addEventListener('pointermove', e=>{
     if(!down || pinch.active) return;
-    view.x = ox + (e.clientX - sx);
-    view.y = oy + (e.clientY - sy);
+    const dx = e.clientX - sx, dy = e.clientY - sy;
+    if(!movedFar){
+      if(Math.hypot(dx, dy) < MOVE_THRESH) return;     // still within tap slop
+      movedFar = true;
+      stage.classList.add('panning');                  // now it's a drag
+    }
+    view.x = ox + dx;
+    view.y = oy + dy;
     applyView();
   });
   stage.addEventListener('pointerup', e=>{
-    const wasDown = down;
+    const wasDown = down, wasDrag = movedFar;
     down=false; stage.classList.remove('panning');
+    // If we started on a card and it turned into a drag, mark a short-lived flag
+    // so the card's own click listener knows to ignore the follow-up click. A
+    // tap (no drag) leaves the flag clear and the click recenters as before.
+    if(downOnCard && wasDrag){
+      justDraggedUntil = e.timeStamp + 400;
+    }
+    downOnCard = false;
     // ---- double-tap / double-click to zoom (empty space only) ----
     if(!wasDown || pinch.active) return;              // ignore card taps & pinch
     if(Math.hypot(e.clientX - sx, e.clientY - sy) > 6) { lastTap = null; return; } // was a drag
@@ -1980,7 +2015,13 @@ let tourIdx = 0, tourActive = false, tourSteps = TOUR.slice();
 
 function tourTipText(i){
   const tips = welcomeEl ? [...welcomeEl.querySelectorAll('.welcome-tips li')] : [];
-  return tips[i] ? tips[i].textContent.trim() : '';
+  if(!tips[i]) return '';
+  // Clone so we can strip the device swap branch that's hidden in this viewport
+  // (textContent ignores CSS display, so both variants would otherwise be read).
+  const clone = tips[i].cloneNode(true);
+  const drop = window.matchMedia('(max-width: 560px)').matches ? '.desktop-only' : '.mobile-only-inline';
+  clone.querySelectorAll(drop).forEach(n => n.remove());
+  return clone.textContent.replace(/\s+/g, ' ').trim();
 }
 function tourRects(){
   const PAD = 6;
