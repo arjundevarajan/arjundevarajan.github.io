@@ -62,7 +62,9 @@
     margin: 0 0 22px;
   }
   .gate-input {
-    width: 100%; font-family: var(--sans); font-size: 15px;
+    /* 16px min: iOS Safari auto-zooms when focusing an input smaller than 16px,
+       and that zoom would then throw off the spotlight tour after unlock. */
+    width: 100%; font-family: var(--sans); font-size: 16px;
     color: var(--ink); background: var(--paper);
     border: 1px solid var(--line); border-radius: 10px;
     padding: 12px 14px; outline: none; text-align: center;
@@ -521,6 +523,7 @@
       display: block;
       position: absolute; top: 50%; right: 0; transform: translateY(-50%);
       width: min(320px, calc(100vw - 20px)); max-width: none;
+      font-size: 16px;               /* avoid iOS auto-zoom on focus */
       z-index: 45;
     }
     .results {
@@ -2009,7 +2012,11 @@ function positionTourCard(rects, H){
 function renderTour(){
   if(!tourEl) return;
   const step = tourSteps[tourIdx];
-  const W = window.innerWidth, H = window.innerHeight;
+  // Use the LAYOUT viewport (documentElement), not window.innerWidth/Height —
+  // the latter returns the smaller *visual* viewport while pinch-zoomed on iOS,
+  // which would size the dim overlay wrong. getBoundingClientRect() (used for the
+  // holes) is in the same layout-viewport space, so they stay aligned.
+  const W = document.documentElement.clientWidth, H = document.documentElement.clientHeight;
   const rects = tourRects();
   // Cut crisp holes out of the dim+blur layer with clip-path (evenodd), so the
   // highlighted region shows through completely un-blurred.
@@ -2068,6 +2075,12 @@ function tourGo(delta){
   const tn = document.getElementById('tour-next'); if(tn) tn.addEventListener('click', ()=> tourGo(1));
   const ts = document.getElementById('tour-skip'); if(ts) ts.addEventListener('click', endTour);
   window.addEventListener('resize', ()=>{ if(tourActive) renderTour(); });
+  // iOS: the visual viewport can change (URL bar, pinch-zoom) without a window
+  // resize — recompute the spotlight so it keeps tracking its targets.
+  if(window.visualViewport){
+    window.visualViewport.addEventListener('resize', ()=>{ if(tourActive) renderTour(); });
+    window.visualViewport.addEventListener('scroll', ()=>{ if(tourActive) renderTour(); });
+  }
 })();
 
 /* ============================================================
