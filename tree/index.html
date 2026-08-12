@@ -1682,7 +1682,10 @@ function applyView(){
     down=true; movedFar=false;
     downOnCard = !!e.target.closest('.person');
     sx=e.clientX; sy=e.clientY; ox=view.x; oy=view.y;
-    try { stage.setPointerCapture(e.pointerId); } catch(_){}
+    // Deliberately do NOT setPointerCapture here — capture would retarget the
+    // follow-up `click` to the stage and stop it from reaching the card, which
+    // would break single-click to recenter. We only capture once the gesture is
+    // definitely a drag (in pointermove below).
   });
   stage.addEventListener('pointermove', e=>{
     if(!down || pinch.active) return;
@@ -1691,6 +1694,7 @@ function applyView(){
       if(Math.hypot(dx, dy) < MOVE_THRESH) return;     // still within tap slop
       movedFar = true;
       stage.classList.add('panning');                  // now it's a drag
+      try { stage.setPointerCapture(e.pointerId); } catch(_){}
     }
     view.x = ox + dx;
     view.y = oy + dy;
