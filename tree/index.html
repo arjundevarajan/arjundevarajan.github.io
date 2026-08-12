@@ -83,6 +83,65 @@
   }
   .gate.busy .gate-btn { opacity: .6; pointer-events: none; }
 
+  /* ---------- Welcome / first-visit walkthrough (reuses .gate-card) ---------- */
+  .gate.welcome {
+    /* translucent scrim (not the opaque paper backdrop) so the tree shows behind */
+    background:
+      radial-gradient(circle at 30% 12%, rgba(255,255,255,0.28), transparent 60%),
+      rgba(43,58,66,0.34);
+    backdrop-filter: blur(2px);
+    padding: 16px;                       /* keeps the card off the edges on phones */
+  }
+  .welcome .gate-card { width: 384px; max-width: 92vw; padding: 30px 30px 26px; }
+  .welcome .gate-title { font-size: 21px; line-height: 1.25; }
+  .welcome .gate-sub { margin-bottom: 16px; }
+  .welcome-tips {
+    margin: 0; padding: 0 2px 0 22px; text-align: left;
+    font-size: 13.5px; color: var(--ink); line-height: 1.5;
+  }
+  .welcome-tips li { margin: 0 0 11px; padding-left: 3px; }
+  .welcome-tips li:last-child { margin-bottom: 0; }
+  .welcome-note {
+    margin-top: 14px; text-align: center;
+    font-size: 12px; color: var(--ink-soft); line-height: 1.4;
+  }
+
+  /* Stepped mode (first visit): one tip at a time with Back / progress / Next. */
+  .welcome-nav { display: none; align-items: center; gap: 10px; margin-top: 6px; }
+  .welcome.stepped .welcome-nav { display: flex; }
+  .welcome.stepped .welcome-done,
+  .welcome.stepped .welcome-note { display: none; }
+  .welcome.stepped .welcome-tips {
+    list-style: none; padding-left: 2px;
+    min-height: 150px;              /* steady card height across steps */
+    display: flex; align-items: center;
+  }
+  .welcome-back {
+    background: transparent; border: none; padding: 8px 4px;
+    font-family: var(--sans); font-size: 13px; color: var(--ink-soft);
+    cursor: pointer; transition: color .15s;
+  }
+  .welcome-back:hover { color: var(--ink); }
+  .welcome-back[disabled] { visibility: hidden; }   /* keep its space on step 1 */
+  .welcome-progress { font-size: 12px; color: var(--ink-soft); margin-left: auto; }
+  .welcome-next { width: auto; margin-top: 0; padding: 11px 24px; }
+
+  /* Rows that only make sense on touch screens (pinch/drag) — shown in the
+     mobile media query below. */
+  .mobile-only { display: none; }
+
+  /* Magnifier that expands the search field on mobile; hidden on desktop. */
+  .search-toggle {
+    display: none;
+    width: 34px; height: 34px;
+    align-items: center; justify-content: center;
+    color: var(--ink); background: var(--card);
+    border: 1px solid var(--line); border-radius: 8px;
+    cursor: pointer; padding: 0;
+    transition: background .15s, border-color .15s;
+  }
+  .search-toggle:hover { background: var(--paper-edge); border-color: var(--ink-soft); }
+
   html, body {
     margin: 0; height: 100%;
     background: var(--paper);
@@ -119,12 +178,36 @@
     letter-spacing: 0.01em;
     color: var(--ink);
     white-space: nowrap;
+    cursor: pointer; user-select: none;
+    transition: opacity .15s;
+  }
+  .brand:hover { opacity: .72; }
+  .brand:focus-visible {
+    outline: none; border-radius: 6px;
+    box-shadow: 0 0 0 3px rgba(43,58,66,0.12);
   }
   .brand .leaf { color: var(--oxblood); }
 
+  /* ---------- jump-to-person buttons ---------- */
+  .jump {
+    margin-left: auto;            /* pushes this group + the toggle to the right */
+    display: flex; align-items: center; gap: 8px;
+  }
+  .jump-btn {
+    font-family: var(--sans); font-size: 12.5px;
+    color: var(--ink); background: var(--card);
+    border: 1px solid var(--line); border-radius: 8px;
+    padding: 7px 12px; cursor: pointer;
+    transition: background .15s, border-color .15s;
+    white-space: nowrap;
+  }
+  .jump-btn:hover { background: var(--paper-edge); border-color: var(--ink-soft); }
+  .jump-btn:focus-visible {
+    outline: none; box-shadow: 0 0 0 3px rgba(43,58,66,0.12);
+  }
+
   /* ---------- cousins toggle ---------- */
   .toggle {
-    margin-left: auto;
     display: flex; align-items: center; gap: 8px;
     cursor: pointer; user-select: none;
     font-size: 13px; color: var(--ink-soft);
@@ -286,6 +369,11 @@
     color: var(--ink);
     margin-bottom: 3px;
     padding-right: 14px;   /* clear the corner sex indicator */
+    /* Long single-word surnames are first shrunk to fit by fitName() in JS; this
+       is the last-resort safety so they wrap (and hyphenate where possible)
+       rather than ever spilling past the card edge. */
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
   .person.center .p-name { color: var(--oxblood); }
   .p-years {
@@ -387,22 +475,38 @@
 
   @media (max-width: 560px) {
     .legend { display: none; }
-    .brand { font-size: 16px; }
+    .brand { font-size: 15px; }
     .person { width: 128px; }
 
     /* Tighten the header so items fit a phone width */
-    header { gap: 10px; padding: 0 12px; }
+    header { gap: 8px; padding: 0 10px; }
     /* Hide the loader buttons on mobile — updates are done on desktop anyway,
        and they crowd the narrow bar. (Harmless if already stripped.) */
     .loader { display: none; }
-    .toggle-label { display: none; }        /* keep the switch, drop its text */
+    /* Keep the "Cousins" label — the collapsed search (below) frees the room. */
 
-    /* Constrain search so it never runs off the right edge */
-    #search { width: 150px; max-width: 44vw; }
-    #search:focus { width: 170px; max-width: 52vw; }
+    /* Compact the jump buttons so they fit a phone bar: "Arjun" / "Nupur" */
+    .jump { gap: 5px; }
+    .jump-pre { display: none; }            /* drop the "Go to " prefix */
+    .jump-btn { font-size: 11.5px; padding: 6px 7px; }
+
+    /* Collapse search to a magnifier icon; tapping it expands the field over
+       the header row so the full placeholder fits and the bar stays uncrowded. */
+    .search-toggle { display: inline-flex; }
+    .search-wrap #search { display: none; }
+    .search-wrap.open .search-toggle { visibility: hidden; }
+    .search-wrap.open #search {
+      display: block;
+      position: absolute; top: 50%; right: 0; transform: translateY(-50%);
+      width: min(320px, calc(100vw - 20px)); max-width: none;
+      z-index: 45;
+    }
     .results {
       width: 80vw; max-width: 80vw; right: 0;   /* wide enough to read, capped to viewport */
     }
+
+    /* Touch-only walkthrough rows (pinch/drag) */
+    .mobile-only { display: list-item; }
   }
   @media (prefers-reduced-motion: reduce) {
     .person { transition: opacity .3s ease; }
@@ -435,8 +539,34 @@
       <div id="enc-err" class="gate-err"></div>
     </div>
   </div>
+  <!-- First-visit walkthrough: shown once (localStorage), reopenable via the ? control -->
+  <div id="welcome" class="gate welcome" style="display:none">
+    <div class="gate-card">
+      <div class="gate-leaf">&#9727;</div>
+      <h1 class="gate-title">Welcome to Arjun and Nupur's Family Tree</h1>
+      <p class="gate-sub">Here's how to find your way around.</p>
+      <ol class="welcome-tips">
+        <li>Click/tap any individual name to move that person to the center and see their immediate family (their parents, siblings, spouse/partner, children, direct aunts/uncles, and first cousins).</li>
+        <li>Tap the Cousins toggle to remove/add cousins from the view to simplify things.</li>
+        <li>Continue tapping to travel through the family tree, one person at a time. You can use the &larr; and &rarr; buttons (in the bottom-left) to go backward and forward.</li>
+        <li>Use the search bar (in the top-right) to find anyone by name, or use Go to Arjun / Go to Nupur to jump home.</li>
+        <li class="mobile-only">Pinch, double-tap, or use +/&minus; to zoom, and drag to move around.</li>
+      </ol>
+      <div class="welcome-nav">
+        <button class="welcome-back" id="welcome-back" type="button">Back</button>
+        <span class="welcome-progress" id="welcome-progress"></span>
+        <button class="welcome-next gate-btn" id="welcome-next" type="button">Next</button>
+      </div>
+      <button id="welcome-go" class="gate-btn welcome-done">Got it</button>
+      <div class="welcome-note">You can see these instructions again anytime by tapping the ? button.</div>
+    </div>
+  </div>
   <header>
-    <div class="brand"><span class="leaf">&#9727;</span>&nbsp;Family Tree</div>
+    <div class="brand" id="brand-home" role="button" tabindex="0" title="Back to home (Arjun Devarajan)"><span class="leaf">&#9727;</span>&nbsp;Family Tree</div>
+    <div class="jump" id="jump">
+      <button class="jump-btn" id="go-arjun" title="Center the tree on Arjun Devarajan"><span class="jump-pre">Go to </span>Arjun</button>
+      <button class="jump-btn" id="go-nupur" title="Center the tree on Nupur"><span class="jump-pre">Go to </span>Nupur</button>
+    </div>
     <label class="toggle" id="cousin-toggle" title="Show or hide first cousins">
       <input type="checkbox" id="cousin-check" checked>
       <span class="toggle-track"><span class="toggle-thumb"></span></span>
@@ -448,6 +578,9 @@
       <!-- <button class="load-btn secondary" id="bake-btn" title="Encrypt your data with a password and output it to paste into this file" style="display:none">Encrypt &amp; bake</button> -->
     </div>
     <div class="search-wrap">
+      <button class="search-toggle" id="search-toggle" title="Search" aria-label="Search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="7"></circle><line x1="21" y1="21" x2="16" y2="16"></line></svg>
+      </button>
       <input id="search" type="text" placeholder="Search a name&hellip;" autocomplete="off" spellcheck="false">
       <div class="results" id="results"></div>
     </div>
@@ -469,6 +602,8 @@
     <div class="ctrl" id="zoom-in" title="Zoom in">+</div>
     <div class="ctrl" id="zoom-out" title="Zoom out">&minus;</div>
     <div class="ctrl" id="reset" title="Recenter view">&#8634;</div>
+    <div class="ctrl-gap"></div>
+    <div class="ctrl" id="help" title="How to use this tree">?</div>
   </div>
 
   <div class="legend">
@@ -494,6 +629,10 @@
 // against the parsed "Given Surname"). Declared early so pickDefaultCenter,
 // which runs at initial load, can always see it. Change this to re-home the tree.
 const DEFAULT_PERSON = "Arjun Devarajan";
+// The two "jump" buttons + the clickable brand re-home the tree on these people.
+// Matched the same loose way as DEFAULT_PERSON, so a first name is enough.
+const HOME_PERSON   = DEFAULT_PERSON;   // brand + "Go to Arjun"
+const SECOND_PERSON = "Nupur";          // "Go to Nupur"
 
 const SAMPLE = {
   individuals: {
@@ -1094,25 +1233,37 @@ let centerId = pickDefaultCenter();
 let showCousins = true;                 // toggled by the header switch
 let view = { x: 0, y: 0, scale: 1 };   // pan/zoom of the whole canvas
 let originX = 0, originY = 0;           // where (0,0) of tree-space sits on screen
+let pendingFit = true;                  // when true, next render() sets an auto-fit zoom
 
 // Name of the person the tree should open on by default.
 // Matched case-insensitively against the parsed "Given Surname" name.
-function pickDefaultCenter(){
-  // 1) exact (case-insensitive) match on the preferred default name
-  const want = DEFAULT_PERSON.trim().toLowerCase();
+// Resolve a name (full or partial) to an individual id, or null if none match.
+// 1) exact case-insensitive match, then 2) loose match where every word of the
+//    target appears in the name (handles middle names, punctuation, first-name-
+//    only lookups like "Nupur").
+function findPersonId(name){
+  const want = (name || '').trim().toLowerCase();
+  if(!want) return null;
   const exact = Object.keys(IND).find(id => (IND[id].name||'').trim().toLowerCase() === want);
   if(exact) return exact;
-  // 2) loose match: all words of the target appear in the name
-  //    (handles inserted middle names, extra punctuation, etc.)
   const wantWords = want.split(/\s+/).filter(Boolean);
   const loose = Object.keys(IND).find(id => {
     const nm = (IND[id].name||'').toLowerCase();
     return wantWords.every(w => nm.includes(w));
   });
-  if(loose) return loose;
-  // 3) legacy sample default, then 4) first individual
-  if(IND.I20) return "I20";
-  return Object.keys(IND)[0];
+  return loose || null;
+}
+
+function pickDefaultCenter(){
+  // preferred default name, then legacy sample default, then first individual
+  return findPersonId(DEFAULT_PERSON) || (IND.I20 ? "I20" : Object.keys(IND)[0]);
+}
+
+// Jump the tree so it's centred on the named person. No-op if the name isn't
+// found (e.g. data not loaded yet), so it's safe to wire to a button.
+function goToPerson(name){
+  const id = findPersonId(name);
+  if(id) choose(id);
 }
 
 function fmtYears(p){
@@ -1186,14 +1337,14 @@ function render(){
 
   const { cx, cy } = screenCenter();
 
-  // Center the VIEW on the tree's bounding box, not on the focused person.
-  // The neighborhood is asymmetric (it can reach much further up to
-  // grandparents/cousins than down), so if we pinned the focused person to
-  // screen-center the upper rows would spill off the top. We measure the
-  // vertical extent of all positioned cards and shift the origin so the
-  // whole tree is vertically centered. Horizontally the layout is already
-  // symmetric about x=0, so we keep the focused person on the centre axis.
-  const CARD_HALF = 34; // approx half card height, for padding the bounds
+  // ---- centre the view -------------------------------------------------
+  // Horizontally: pin the FOCUSED person to screen-centre. The center row is
+  // NOT symmetric — siblings sit to the left of x=0, spouses to the right — so
+  // centring the bounding box could shove the focused person (and sometimes
+  // whole rows of siblings) off the edge. Pinning x=0 keeps the clicked person
+  // centred and always on screen.
+  // Vertically: keep centring the whole neighbourhood's bounding box, since it
+  // reaches much further up (grandparents/cousins) than down.
   let minX = 0, maxX = 0, minY = 0, maxY = 0;
   Object.values(pos).forEach(p => {
     if(p.x < minX) minX = p.x;
@@ -1201,10 +1352,29 @@ function render(){
     if(p.y < minY) minY = p.y;
     if(p.y > maxY) maxY = p.y;
   });
-  const midX = (minX + maxX) / 2;   // horizontal middle of the actual content
-  const midY = (minY + maxY) / 2;   // vertical middle of the actual content
-  originX = cx - midX;             // shift so content-middle sits at screen middle
-  originY = cy - midY;
+  const midY = (minY + maxY) / 2;
+  const focusX = pos[centerId] ? pos[centerId].x : 0;
+  originX = cx - focusX;           // focused person on the centre axis
+  originY = cy - midY;             // whole tree vertically centred
+
+  // ---- auto-fit zoom (only on a fresh focus / reset / first load) ------
+  // Open the neighbourhood zoomed to fit the viewport instead of pinned at 1×
+  // (which is far too tight on phones — you only see two or three cards). Never
+  // zoom IN past 1×; clamp to a readable floor so very wide generations simply
+  // show ~half the row rather than shrinking to nothing. Manual pan/zoom made
+  // afterwards is preserved because pendingFit is only set on a fresh focus.
+  if(pendingFit){
+    pendingFit = false;
+    const vw = 2 * cx, vh = 2 * cy;
+    const CARD_HW = 82, CARD_H = 84, PAD = 0.9;   // approx card half-width / height
+    const FIT_FLOOR = vw < 560 ? 0.45 : 0.55;     // let phones zoom out further
+    const halfW = Math.max(Math.abs(minX - focusX), Math.abs(maxX - focusX)) + CARD_HW;
+    const contentW = 2 * halfW;                   // width needed to keep the person centred
+    const contentH = (maxY - minY) + CARD_H;
+    const fit = Math.min(1, (vw * PAD) / contentW, (vh * PAD) / contentH);
+    view.x = 0; view.y = 0;
+    view.scale = Math.max(FIT_FLOOR, fit);
+  }
 
   // ---- reconcile person cards (keep existing for smooth motion) ----
   const existing = new Map(
@@ -1247,8 +1417,48 @@ function render(){
     }
   });
 
+  // Shrink any name that would overflow its card (long single-word surnames)
+  // so it stays on one line instead of breaking mid-word.
+  canvas.querySelectorAll('.person .p-name').forEach(fitName);
+
   drawLinks(nodes, pos);
   applyView();
+}
+
+// Shrink a name's font ONLY when a single word is too wide for the card — i.e.
+// the case that would otherwise break mid-word. Multi-word names are left at
+// full size so they wrap naturally across two lines. The widest word is measured
+// with a hidden DOM span that mirrors .p-name's real font (canvas measureText
+// can't see web fonts and under-measures), then the font is sized so it just
+// fits, down to an 11px readability floor.
+function fitName(el){
+  if(!el) return;
+  el.style.fontSize = '';                 // reset to the CSS default each render
+  const avail = el.clientWidth;
+  if(!avail) return;
+  const cs = getComputedStyle(el);
+  const content = avail - (parseFloat(cs.paddingRight) || 0); // text area (padding-left is 0)
+  const base = parseFloat(cs.fontSize) || 15.5;
+  let m = fitName._m;
+  if(!m){
+    m = document.createElement('span');
+    m.style.cssText = 'position:absolute;left:-9999px;top:-9999px;white-space:nowrap;visibility:hidden;pointer-events:none;';
+    document.body.appendChild(m);
+    fitName._m = m;
+  }
+  m.style.fontFamily = cs.fontFamily;
+  m.style.fontWeight = cs.fontWeight;
+  m.style.fontStyle  = cs.fontStyle;
+  m.style.fontSize   = base + 'px';
+  let widest = 0;
+  el.textContent.trim().split(/\s+/).forEach(word => {
+    m.textContent = word;
+    if(m.offsetWidth > widest) widest = m.offsetWidth;
+  });
+  if(widest > content){
+    const size = Math.max(10, base * content / widest);  // 10px floor for extreme names
+    el.style.fontSize = size.toFixed(1) + 'px';
+  }
 }
 
 function refreshCardInner(el, node){
@@ -1346,11 +1556,12 @@ function focusOn(id){
   if(animating || id === centerId) return false;
   animating = true;
   centerId = id;
-  // Fully reset pan AND zoom. Because the canvas scales from its top-left
-  // origin, leaving a non-1 scale in place while re-centering can fling the
-  // content into a corner (notably on touch devices where zoom drifts). A
-  // clean reset guarantees the new focus lands centered every time.
-  view.x = 0; view.y = 0; view.scale = 1;
+  // Fully reset pan, and let render() pick a fresh auto-fit zoom for the new
+  // person. Leaving a stale scale in place while re-centering can fling the
+  // content into a corner; refitting guarantees the new focus lands centered
+  // and comfortably framed every time.
+  view.x = 0; view.y = 0;
+  pendingFit = true;
   render();
   dismissHint();
   setTimeout(()=>{ animating = false; }, 560);
@@ -1405,7 +1616,7 @@ function applyView(){
 }
 
 (function enablePan(){
-  let down=false, sx=0, sy=0, ox=0, oy=0;
+  let down=false, sx=0, sy=0, ox=0, oy=0, lastTap=null;
   const pinch = { active:false, startDist:0, startScale:1 };
   stage.addEventListener('pointerdown', e=>{
     if(e.target.closest('.person')) return; // don't pan when grabbing a card
@@ -1421,7 +1632,33 @@ function applyView(){
     applyView();
   });
   stage.addEventListener('pointerup', e=>{
+    const wasDown = down;
     down=false; stage.classList.remove('panning');
+    // ---- double-tap / double-click to zoom (empty space only) ----
+    if(!wasDown || pinch.active) return;              // ignore card taps & pinch
+    if(Math.hypot(e.clientX - sx, e.clientY - sy) > 6) { lastTap = null; return; } // was a drag
+    const now = e.timeStamp;
+    if(lastTap && (now - lastTap.t) < 300 &&
+       Math.hypot(e.clientX - lastTap.x, e.clientY - lastTap.y) < 30){
+      lastTap = null;
+      // Toggle between the fitted view and a zoomed-in view. Zoom IN toward the
+      // exact point that was tapped (like a map) — keep that spot under the
+      // finger — instead of always recentring on the focused person.
+      if(view.scale < 1.1){
+        const rect = stage.getBoundingClientRect();
+        const tx = sx - rect.left, ty = sy - rect.top;      // tap point, stage-relative
+        const cx = rect.width / 2, cy = rect.height / 2;     // matches applyView's scale origin
+        const s1 = 1.25, ratio = s1 / view.scale;
+        view.x = (1 - ratio) * (tx - cx) + ratio * view.x;   // solve so the tapped point stays fixed
+        view.y = (1 - ratio) * (ty - cy) + ratio * view.y;
+        view.scale = s1;
+        applyView();
+      } else {
+        view = { x:0, y:0, scale:1 }; pendingFit = true; render(); // …or back to the fitted view
+      }
+    } else {
+      lastTap = { t: now, x: e.clientX, y: e.clientY };
+    }
   });
   stage.addEventListener('pointercancel', ()=>{ down=false; stage.classList.remove('panning'); });
 
@@ -1469,9 +1706,21 @@ function zoomAt(px, py, factor){
 
 document.getElementById('zoom-in').onclick  = ()=> zoomAt(stage.clientWidth/2, stage.clientHeight/2, 1.15);
 document.getElementById('zoom-out').onclick = ()=> zoomAt(stage.clientWidth/2, stage.clientHeight/2, 0.87);
-document.getElementById('reset').onclick    = ()=>{ view={x:0,y:0,scale:1}; applyView(); };
+document.getElementById('reset').onclick    = ()=>{ view={x:0,y:0,scale:1}; pendingFit=true; render(); };
 document.getElementById('nav-back').onclick = goBack;
 document.getElementById('nav-fwd').onclick  = goForward;
+
+// brand = "home" (Arjun); the two jump buttons re-home the tree on a person
+document.getElementById('go-arjun').onclick = ()=> goToPerson(HOME_PERSON);
+document.getElementById('go-nupur').onclick = ()=> goToPerson(SECOND_PERSON);
+(function wireBrandHome(){
+  const brand = document.getElementById('brand-home');
+  if(!brand) return;
+  brand.addEventListener('click', ()=> goToPerson(HOME_PERSON));
+  brand.addEventListener('keydown', e=>{
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); goToPerson(HOME_PERSON); }
+  });
+})();
 
 // cousins toggle
 document.getElementById('cousin-check').addEventListener('change', (e)=>{
@@ -1505,6 +1754,7 @@ document.getElementById('ged-file').addEventListener('change', (e)=>{
       DATA = parsed; IND = parsed.individuals; FAM = parsed.families;
       centerId = pickDefaultCenter();
       view = { x:0, y:0, scale:1 };
+      pendingFit = true;
       showCousins = document.getElementById('cousin-check').checked;
       render();
       document.getElementById('bake-btn').style.display = '';
@@ -1619,6 +1869,7 @@ function highlight(){
 function choose(id){
   closeResults();
   searchEl.value = '';
+  document.querySelector('.search-wrap').classList.remove('open'); // collapse mobile search
   view={x:0,y:0,scale:1};
   recenter(id);
 }
@@ -1626,6 +1877,94 @@ function closeResults(){ resultsEl.classList.remove('open'); activeIdx=-1; curre
 document.addEventListener('click', e=>{
   if(!e.target.closest('.search-wrap')) closeResults();
 });
+
+// ---- mobile: tap the magnifier to expand the search field over the header ----
+(function mobileSearch(){
+  const wrap = document.querySelector('.search-wrap');
+  const toggle = document.getElementById('search-toggle');
+  if(!wrap || !toggle) return;
+  const mq = window.matchMedia('(max-width: 560px)');
+  const collapse = ()=> wrap.classList.remove('open');
+  toggle.addEventListener('click', e=>{
+    e.stopPropagation();
+    if(wrap.classList.contains('open')){ collapse(); }
+    else { wrap.classList.add('open'); setTimeout(()=> searchEl.focus(), 30); }
+  });
+  // collapse when the field is left empty (and no result list is open)
+  searchEl.addEventListener('blur', ()=>{
+    setTimeout(()=>{
+      if(mq.matches && !searchEl.value.trim() && !resultsEl.classList.contains('open')) collapse();
+    }, 120);
+  });
+  searchEl.addEventListener('keydown', e=>{ if(e.key === 'Escape') collapse(); });
+  // if the viewport grows back to desktop, drop the mobile open state
+  mq.addEventListener('change', ()=>{ if(!mq.matches) collapse(); });
+})();
+
+/* ============================================================
+   WELCOME  (first-visit walkthrough; reopenable via the ? control)
+   ============================================================ */
+const ONBOARD_KEY = "familytree_onboarded_v1";   // mirrors the unlock-store convention
+function hasOnboarded(){
+  try { return localStorage.getItem(ONBOARD_KEY) === "1"; }
+  catch(e){ return false; }   // storage unavailable — treat as not-yet-seen
+}
+function markOnboarded(){
+  try { localStorage.setItem(ONBOARD_KEY, "1"); } catch(e){ /* storage off — fine */ }
+}
+const welcomeEl = document.getElementById('welcome');
+function hideWelcome(){ if(welcomeEl) welcomeEl.style.display = 'none'; }
+
+// ---- first visit: one tip at a time (stepped) ----
+let welcomeSteps = [], welcomeIdx = 0;
+function welcomeStepList(){
+  // On desktop the pinch/drag tip (mobile-only) isn't a step.
+  const mobile = window.matchMedia('(max-width: 560px)').matches;
+  return [...welcomeEl.querySelectorAll('.welcome-tips li')]
+    .filter(li => mobile || !li.classList.contains('mobile-only'));
+}
+function renderWelcomeStep(){
+  welcomeEl.querySelectorAll('.welcome-tips li').forEach(li => li.style.display = 'none');
+  const cur = welcomeSteps[welcomeIdx];
+  if(cur) cur.style.display = 'list-item';
+  const last = welcomeIdx === welcomeSteps.length - 1;
+  document.getElementById('welcome-back').disabled = welcomeIdx === 0;
+  document.getElementById('welcome-next').textContent = last ? 'Got it' : 'Next';
+  document.getElementById('welcome-progress').textContent = `${welcomeIdx + 1} of ${welcomeSteps.length}`;
+}
+function showWelcomeStepped(){
+  if(!welcomeEl) return;
+  welcomeEl.classList.add('stepped');
+  welcomeSteps = welcomeStepList();
+  welcomeIdx = 0;
+  renderWelcomeStep();
+  welcomeEl.style.display = 'grid';
+}
+// ---- reopened via "?": the whole list at once ----
+function showWelcomeAll(){
+  if(!welcomeEl) return;
+  welcomeEl.classList.remove('stepped');
+  // clear any inline display left by stepping, so CSS controls visibility again
+  welcomeEl.querySelectorAll('.welcome-tips li').forEach(li => li.style.display = '');
+  welcomeEl.style.display = 'grid';
+}
+(function wireWelcome(){
+  const go = document.getElementById('welcome-go');
+  if(go) go.addEventListener('click', ()=>{ markOnboarded(); hideWelcome(); });
+  const back = document.getElementById('welcome-back');
+  if(back) back.addEventListener('click', ()=>{ if(welcomeIdx > 0){ welcomeIdx--; renderWelcomeStep(); } });
+  const next = document.getElementById('welcome-next');
+  if(next) next.addEventListener('click', ()=>{
+    if(welcomeIdx < welcomeSteps.length - 1){ welcomeIdx++; renderWelcomeStep(); }
+    else { markOnboarded(); hideWelcome(); }   // "Got it" on the last step
+  });
+  const help = document.getElementById('help');
+  if(help) help.addEventListener('click', showWelcomeAll);
+  // Click the backdrop (anywhere outside the card) to dismiss — same as "Got it".
+  if(welcomeEl) welcomeEl.addEventListener('click', e => {
+    if(e.target === welcomeEl){ markOnboarded(); hideWelcome(); }
+  });
+})();
 
 /* ============================================================
    HINT + INIT
@@ -1643,8 +1982,15 @@ function initApp(){
   // and the browser has measured the stage — so centering uses the real
   // stage size rather than 0 (which would pin everything to the top-left).
   render();
-  requestAnimationFrame(()=> requestAnimationFrame(render));
+  // Refit on the next frame once the stage has its real measured size (the
+  // first render may run before layout settles, giving a wrong fit scale).
+  requestAnimationFrame(()=> requestAnimationFrame(()=>{ pendingFit = true; render(); }));
+  // Re-fit names once web fonts finish loading — metrics change vs the fallback
+  // font, so a long name that fit the fallback might need re-measuring.
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(()=> render()); }
   updateNavButtons();
+  // First visit ever: greet with the walkthrough (after the tree is on screen).
+  if(!hasOnboarded()) showWelcomeStepped();
 }
 
 /* ---- Startup: gate on encrypted data if present ----
